@@ -1,11 +1,13 @@
 
 import 'package:finalproject/common/colo_extension.dart';
-import 'package:finalproject/view/on_boarding/started_view.dart';
+import 'package:finalproject/view/login/signup_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 
 Future<void> main() async {
-  
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
         primaryColor: TColor.primaryColor1,
         fontFamily: "Poopins"
       ),
-      home: const StartedView(),
+      home: const SignUpView(),
     );
   }
 }
